@@ -1,0 +1,43 @@
+.container{
+    height:calc(100vh );
+    padding-top: 100px;
+    overflow-x: hidden;
+    background-color: #E782C2;
+  
+  
+}
+.bannerWrapper{
+    width: 600vw;
+    height: 100%;
+    display: flex;
+    transition:all 1.5s ease-in-out;
+}
+
+.imgContainer{
+     height:100%;
+    width: 100vw;
+    position: relative; 
+  
+   
+}
+
+
+.arrow{
+    z-index:5;
+    color:white;
+    height: 10%;
+    width: 20%;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    margin: auto;
+    cursor: pointer;
+    transition: all 1s ease;
+
+}
+
+.arrow:hover{
+    transform: scale(1.1);
+}
+
+
