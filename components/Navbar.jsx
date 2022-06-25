@@ -77,7 +77,7 @@ const Navbar = ({ toggleLogIn }) => {
                      <div className={styles.cartCount}>0</div>
                  </div>
             </div>
-            {open &&   <MobileNavigation/> }
+            {open &&   <MobileNavigation  toggleNav={ toggleNav }/> }
            
 
         </div>

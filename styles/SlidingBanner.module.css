@@ -45,3 +45,9 @@
 }
 
 
+
+@media (max-width:600px) {
+    .container{
+        height: 30rem;
+    }
+}

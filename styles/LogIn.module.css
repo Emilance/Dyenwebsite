@@ -34,7 +34,7 @@
     border: 1px solid black;
     border-radius: 50%;
     margin-bottom: 0.2rem;
-    margin-left: 0.3rem;
+    margin-left: 1rem;
 }
 .backArrow:hover{
     transform: scale(1.04);

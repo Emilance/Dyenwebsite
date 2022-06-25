@@ -73,7 +73,7 @@
     border: 1px solid rgb(124, 113, 113);
     margin:0.4rem  0.4rem 0.4rem 0;
     position: relative;
-    width: 25%;
+    width: 31%;
     height: 3rem;
     display: flex;
     justify-content: space-between;
@@ -109,6 +109,7 @@
      width: 100%;
      justify-content: flex-start;
      margin-left: 2rem;
+     margin-top: 1rem;
 }
 
 .CTAContainer > input {
@@ -124,6 +125,8 @@
     background-color: #E782C2;
     border: none;
     cursor: pointer;
+    font-weight: 600;
+    
 }
 
 .CTAContainer > button:hover{
@@ -159,5 +162,14 @@
     .productDetails > p{
         width: 100%;
         margin-left: auto;
+    }
+    .size{
+        margin: 0;
+    }
+    .CTAContainer > input{
+       flex: 1;
+    }
+    .CTAContainer > button {
+        flex: 1.5;
     }
 }
