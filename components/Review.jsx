@@ -15,7 +15,7 @@ const Reviews = () => {
             img:"/img/user2.jpg",
             name:"Femi Aronimo",
             location:"Ijebu Igbo",
-            reviews:"Wow  supercalifragilisticexoalidocious, love it 😍, I will write about this  platform on my blog",
+            reviews:"Wow  supercali fragilistic  exoalidocious, love it 😍, I will write about this  platform on my blog",
         },
         {
             img:"/img/avatar.png",
@@ -46,7 +46,7 @@ const Reviews = () => {
                 img:"/img/user2.jpg",
                 name:"Femi Aronimo",
                 location:"Ijebu Igbo",
-                reviews:"Wow  supercalifragilisticexoalidocious, love it 😍, I will write about this  platform on my blog",
+                reviews:"Wow  supercalifra  gilisticex  oalido cious, love it 😍, I will write about this  platform on my blog",
             },
             {
                 img:"/img/avatar.png",
@@ -58,26 +58,26 @@ const Reviews = () => {
 
     const slidecarousel =(x) => {
           if(x== 1 ){
-              carousel.current.scrollLeft += 300
+              carousel.current.scrollLeft += 200
           }
          else  if(x== 2 ){
-            carousel.current.scrollLeft -= 300
+            carousel.current.scrollLeft -= 200
         }
     }
     
     return ( 
         <div className={styles.container}>
                              <div className={styles.arrow}   style={{left: "7%"}}    onMouseDown={()=> slidecarousel(2)}>
-                               <MdArrowBackIos  color="#E782C2" size="100%"/>
+                               <MdArrowBackIos  size="100%"/>
                            </div>
                            <div className={styles.arrow}     style={{right: "7%"}}  onMouseDown={()=> slidecarousel(1)}>
-                               <MdArrowForwardIos color="#E782C2" size="100%"/>
+                               <MdArrowForwardIos  size="100%"/>
                            </div>
             <h2>What People are Saying About Us</h2>
             <div className={styles.cardContainer} ref={carousel}>
                     {cardContent.map((content, i)=> {
                         return (
-                            <div className={styles.card}>
+                            <div  key={i} className={styles.card}>
 
                             <div className={styles.upperCard}>
                                 <div className={styles.cardImg}>

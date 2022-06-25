@@ -1,0 +1,56 @@
+
+.container{
+    position: fixed;
+    top:100px;
+    z-index: 100;
+    background-color: white;
+    width: 50%;
+    color: black;
+ 
+ 
+}
+
+
+.list {
+  list-style: none;
+}
+
+.listItem{
+    margin:1rem 1rem 1rem 0;
+    width: 100%;
+    padding: 0.6rem;
+    cursor: pointer;
+}
+
+.listItem > a {
+    text-decoration:  none;
+    color: black;
+}
+.listItem:hover{
+   background-color:#E782C2 ;
+}
+
+.buttonContainer {
+    margin: 2rem 0 0 0;
+    width: 100%;
+    display: flex;
+}
+.buttonContainer > button {
+    width: 100%;
+    padding: 0.6rem;
+    cursor: pointer;
+    font-weight: 550;
+}
+
+.buttonContainer > button:hover{
+    background-color:#E782C2 ;
+    border: none;
+
+}
+
+
+@media (min-width:800px) {
+    .container{
+        display: none;
+    }
+}

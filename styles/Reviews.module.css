@@ -73,11 +73,18 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: #E782C2;
     border-radius: 10px;
     display: flex;
+    color:white;
     justify-content: center;
     align-items: center;
     padding: 0.5rem;
     cursor: pointer;
-    z-index: 35;
+    z-index: 30;
    
   
+}
+
+@media (max-width:600px) {
+    .cardContent{
+        width: 10rem;
+    }
 }

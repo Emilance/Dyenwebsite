@@ -1,0 +1,34 @@
+
+
+.filter{
+    margin-left: 20%;
+}
+
+.filter> select {
+    width:10rem;
+    height: 2rem;  
+}
+
+.productContainer{
+    margin: 2rem;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.productContainer > a{
+    text-decoration: none;
+    color: black;
+}
+
+
+@media (max-width:500px) {
+    .productContainer{
+        margin: 1rem;
+    }
+}
+
+

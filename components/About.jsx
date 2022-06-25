@@ -1,23 +1,28 @@
 import styles from "../styles/About.module.css"
 import Image from "next/image";
+import Link from "next/link";
 
 const About = () => {
     const   gridImg  = [
         {
             image: "/img/hat.png",
-            alt :"HAT CATALOGUE"
+            alt :"HAT CATALOGUE",
+            url :"collection/HAT"
         },     
         {
             image:  "/img/school.jpg",
-            alt :"SCHOOL WEAR CATALOGUE"
+            alt :"SCHOOL WEAR COLLECTION",
+            url:"collection/SCHOOL WEAR"
         },
         {
             image:"/img/sport.jpg",
-            alt :" SPORT WEAR CATALOGUE"
+            alt :" SPORT WEAR COLLECTION",
+            url : "collection/SPORT WEAR"
         },
         {
             image: "/img/sneekers.png",
-            alt :"SNEAKERS CATALOGUE"
+            alt :"SNEAKERS COLLECTIONS",
+            url : "collection/SNEAKERS"
         },
 
         
@@ -41,10 +46,13 @@ const About = () => {
             <div className={styles.right}>
             {gridImg.map((img, i) => {
                 return(
-                    <div key={i} className={styles.gridImg}>
+                <Link href={img.url} key={i}>
+
+                    <div  className={styles.gridImg}>
                         <Image src={img.image}  style={{ borderRadius: "10px" }}  alt={img.alt} layout='fill' />
                         <div className={styles.caption}> {img.alt} </div>
                     </div>
+                </Link>
                 )
             })}
             </div>

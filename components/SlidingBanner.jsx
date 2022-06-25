@@ -7,15 +7,14 @@ import { useState } from "react";
 
 const SlidingBanner = () => {
     const [bindex, setBindex] = useState(0)
-    console.log(bindex)
+  
     const  bannerImg = [
+        "/img/7.png",
+        "/img/8.png",
         "/img/1.png",
         "/img/2.png",
         "/img/3.png",
-        "/img/4.png",
-        "/img/5.png",
         "/img/6.png",
-        
     ]
    const handleArrowClick = ( x ) =>{
        if(x == 1){
@@ -38,10 +37,10 @@ const SlidingBanner = () => {
     return ( 
         <div className={styles.container}>
           
-            <div className={styles.arrow}   style={{left: 0}}    onClick={()=> handleArrowClick(2)}>
+            <div className={styles.arrow}   style={{left: '4%'}}    onClick={()=> handleArrowClick(2)}>
                 <MdArrowBackIos size="100%"/>
             </div>
-            <div className={styles.arrow}     style={{right: -10}}  onClick={()=> handleArrowClick(1)}>
+            <div className={styles.arrow}     style={{right: '4%'}}  onClick={()=> handleArrowClick(1)}>
                 <MdArrowForwardIos size="100%"/>
             </div>
             <div className={styles.bannerWrapper} style={{ transform : `translateX(${-100 * bindex}vw)`}}>

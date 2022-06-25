@@ -1,6 +1,6 @@
 .container{
-    height:calc(100vh );
-    padding-top: 100px;
+    height:calc(100vh - 100px);
+  
     overflow-x: hidden;
     background-color: #E782C2;
   
@@ -25,13 +25,17 @@
 .arrow{
     z-index:5;
     color:white;
-    height: 10%;
-    width: 20%;
+    height: 6%;
+    width: 6%;
     position: absolute;
     top:0;
     bottom: 0;
     margin: auto;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     transition: all 1s ease;
 
 }

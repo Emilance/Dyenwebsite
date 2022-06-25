@@ -1,0 +1,163 @@
+.container{
+  
+}
+
+.navSpace {
+    height: 100px;
+    background-color:#E782C2;
+}
+
+.product{
+  display: flex;
+  min-height: 80vh;
+  margin:2rem;
+  
+}
+.productsImg{
+    position: relative;
+    flex:1;
+    width: 100%;
+    min-height: 80vh;
+  
+ 
+ 
+  
+}
+
+.productDetails{
+    flex:1;
+}
+
+.productDetails > h1 {
+   margin: 1rem 1rem 3rem 1rem;
+   margin-left: 2rem;
+
+}
+
+.productDetails> hr {
+    margin: 1rem;
+    margin-left: 2rem;
+    width: 70%;
+    height: 0.4rem;
+    background-color: #E782C2;
+}
+
+.productDetails > h3 {
+    margin: 1rem;
+    margin-left: 2rem;
+}
+
+.productDetails > h3 > span {
+    font-weight: 900;
+    font-size: 1.2rem;
+}
+
+.productDetails > p {
+    margin: 2rem 2rem 2rem 2rem;
+    width: 85%;
+    font-size: 1.4rem;
+}
+
+.size{
+    margin: 2rem;
+    display: flex;
+    width: 100%;
+}
+
+.size > input[type="radio"]{
+    display: none;
+}
+
+.size > label{
+    padding:0.7rem;
+    border: 1px solid rgb(124, 113, 113);
+    margin:0.4rem  0.4rem 0.4rem 0;
+    position: relative;
+    width: 25%;
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+  
+    
+}
+.size > label:after {
+    content: "";
+    height: 1rem;
+    width: 1rem;
+    border: 1px solid black;
+    border-radius: 50%;
+    
+}
+
+.size> input[type="radio"]:checked  + label {
+    background-color:#e782c2b4 ;
+}
+
+.size> input[type="radio"]:checked  + label:after {
+    background-color:black ;
+    border: 3px solid white;
+}
+
+
+
+.CTAContainer{
+  
+     display: flex;
+     width: 100%;
+     justify-content: flex-start;
+     margin-left: 2rem;
+}
+
+.CTAContainer > input {
+    width: 13%;
+      height: auto;
+      font-size: 1.3rem;
+      padding-left:0.3rem;
+}
+
+.CTAContainer > button{
+    width: 30%;
+    padding: 0.85rem;
+    background-color: #E782C2;
+    border: none;
+    cursor: pointer;
+}
+
+.CTAContainer > button:hover{
+    background-color: #e782c2a1;
+}
+
+
+
+
+
+
+@media (max-width:700px) {
+    .product{
+        flex-direction: column;
+        margin: 2rem;
+    }
+    .productDetails{
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .CTAContainer{
+        justify-content: center;
+        margin-left: 0;
+    }
+    .productDetails> h1{
+        margin-left: auto;
+    }
+    .productDetails> hr{
+        width: 100%;
+       
+        margin-left: auto;
+    }
+    .productDetails > p{
+        width: 100%;
+        margin-left: auto;
+    }
+}
