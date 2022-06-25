@@ -14,9 +14,7 @@ const Product = () => {
     const {name, price, img, description} = productDetail
     return ( 
         <div className={styles.container}>
-            <div className={styles.navSpace}>
-                
-            </div>
+          
 
             <div className={styles.product}>
                 <div className={styles.productsImg}>
