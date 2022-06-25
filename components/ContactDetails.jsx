@@ -34,7 +34,7 @@ const ContactDetails = () => {
                   <div className={styles.icon}>
                               <GoQuote size="100%"/>
                         </div>
-                      <h4>We prioritize our customer's satisfaction</h4>
+                      <h4>We prioritize our customer s satisfaction</h4>
                   </div>
               </div>
         </div>
