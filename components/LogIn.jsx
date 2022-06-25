@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styles from '../styles/LogIn.module.css'
-import SignInForm from './SigninForm';
+import SignInForm from './SignInForm';
 import { BiArrowBack} from 'react-icons/bi'
 
 
