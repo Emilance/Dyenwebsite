@@ -9,7 +9,7 @@ const Reviews = () => {
             img:"/img/user1.png",
             name:"Damilola Daniel",
             location:"Ijebu Ode",
-            reviews:" Wow this is a great platform, I have been looking a platform like this since 2099, I am enjoy their service",
+            reviews:" Wow this is a great platform, I have been looking for a platform like this since 2199, I  enjoy their service",
         },
         {
             img:"/img/user2.jpg",
@@ -33,7 +33,7 @@ const Reviews = () => {
             img:"/img/avatar.png",
             name:"Success Beebee",
             location:"Obalende",
-            reviews:"Dyen is great, but I wont give 100%, I will rather give you 60% percent because you deliver my cloth lately",
+            reviews:"Dyen is great, but I wont give you 100%, I will rather give you 60% percent because you deliver my cloth lately",
         },
      
             {
