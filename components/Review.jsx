@@ -15,7 +15,7 @@ const Reviews = () => {
             img:"/img/user2.jpg",
             name:"Femi Aronimo",
             location:"Ijebu Igbo",
-            reviews:"Wow  supercali fragilistic  exoalidocious, love it 😍, I will write about this  platform on my blog",
+            reviews:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima aspernatur repellendus totam veritatis enim esse.",
         },
         {
             img:"/img/avatar.png",
@@ -27,7 +27,7 @@ const Reviews = () => {
             img:"/img/avatar.png",
             name:"Folashade Joy",
             location:"Ilorin",
-            reviews:"🤥 I cant really say much, but all I know is that my pancake is good,all I know is pancake, pancake and pancake",
+            reviews:"🤥 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima aspernatur repellendus totam veritatis enim esse.",
         },
         {
             img:"/img/avatar.png",
@@ -40,19 +40,19 @@ const Reviews = () => {
                 img:"/img/user1.png",
                 name:"Damilola Daniel",
                 location:"Ijebu Ode",
-                reviews:" Wow this is a great platform, I have been looking a platform like this since 2099, I am enjoy their service",
+                reviews:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima aspernatur repellendus totam veritatis enim esse.",
             },
             {
                 img:"/img/user2.jpg",
                 name:"Femi Aronimo",
                 location:"Ijebu Igbo",
-                reviews:"Wow  supercalifra  gilisticex  oalido cious, love it 😍, I will write about this  platform on my blog",
+                reviews:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima aspernatur repellendus totam veritatis enim esse.",
             },
             {
                 img:"/img/avatar.png",
                 name:"Elijah Opulence",
                 location:"Ijebu Ode",
-                reviews:"Excelent service, my socks what dyed exactly as I desire",
+                reviews:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima aspernatur repellendus totam veritatis enim esse.",
             },
     ]
 
@@ -93,6 +93,7 @@ const Reviews = () => {
                         </div>
                             )
                         })}
+                      
                         </div>
         </div>
      );

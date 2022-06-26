@@ -35,7 +35,7 @@ const About = () => {
         <div className={styles.container}>
             <div className={styles.left}>
                    <h1>WHAT DO WE DO</h1>
-                   <p>We are starting  a new service where you re allowed to send us your clothes for tie dying, all you have to do is send us your clothes and tell us sime colors you might like on 
+                   <p>We are starting  a new service where you re allowed to send us your clothes for tie dying, all you have to do is send us your clothes and tell us some colors you might like on 
                        the clothes then the rest is history
                    </p>
                    <p>
