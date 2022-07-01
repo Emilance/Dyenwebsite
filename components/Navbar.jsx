@@ -10,10 +10,11 @@ import {GrMenu} from "react-icons/gr"
 import {ImCross}  from "react-icons/im"
 import { RiUser3Fill } from "react-icons/ri"
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const Navbar = ({ toggleLogIn }) => {
     const [open, setOpen] = useState(false)
-
+   const quantity = useSelector(state => state.cart.quantity)
     const toggleNav = ()=> {
         setOpen(!open)
     }
@@ -69,15 +70,17 @@ const Navbar = ({ toggleLogIn }) => {
              </ul>
             </div>
             <div className={styles.rightNavbar}>
-                 <div onClick={toggleLogIn} className={styles.rightIcon}>
+                 <div onClick={toggleLogIn} className={styles.rightIconLogIn }>
                     <RiUser3Fill title="log in" size="100%"/>
                  </div>
                  <div className={styles.rightIcon}>
+                     <Link href='/cart'>
                      <AiOutlineShoppingCart title="cart" size='100%'/>
-                     <div className={styles.cartCount}>0</div>
+                     </Link>
+                     <div className={styles.cartCount}>{quantity}</div>
                  </div>
             </div>
-            {open &&   <MobileNavigation  toggleNav={ toggleNav }/> }
+            {open &&   <MobileNavigation  toggleLogIn={toggleLogIn} toggleNav={ toggleNav }/> }
            
 
         </div>

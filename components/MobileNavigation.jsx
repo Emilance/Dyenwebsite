@@ -1,7 +1,11 @@
 import styles from "../styles/MobileNavigation.module.css"
 import Link from "next/link";
 
-const MobileNavigation = ( { toggleNav }) => {
+const MobileNavigation = ( { toggleNav,  toggleLogIn}) => {
+        const showLogIn = () =>{
+                toggleLogIn();
+                toggleNav();
+        }
     return ( 
         <div className={styles.container}>
         <div className={styles.mobileNav}>
@@ -27,8 +31,8 @@ const MobileNavigation = ( { toggleNav }) => {
                      </li>
                      </Link>
                      <div className={styles.buttonContainer}>
-                         <button >Login</button>
-                         <button>Sign Up</button>
+                         <button  onClick={showLogIn  }>Login</button>
+                         <button  onClick={ showLogIn}>Sign Up</button>
                      </div>
              </ul>
             </div>

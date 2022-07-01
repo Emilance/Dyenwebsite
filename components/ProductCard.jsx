@@ -2,15 +2,15 @@ import Image from "next/image";
 import styles from "../styles/productCard.module.css"
 
 const ProductCard = ({ info }) => {
-    const {name, image, price} = info;
+    const {title, img, prices} = info;
     return ( 
         <div className={styles.container}>
             <div className={styles.img}>
-                <Image src={image}  alt=""  layout="fill"/>
+                <Image src={img}  alt=""  layout="fill"/>
             </div>
             <div className={styles.details}>
-                <h4>{name}</h4>
-                <p>Price - <span>{price}$</span></p>
+                <h4>{title}</h4>
+                <p>Price - <span>{prices}$</span></p>
             <button> Add to Cart</button>
             </div>
 

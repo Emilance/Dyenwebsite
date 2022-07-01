@@ -1,0 +1,75 @@
+.container{
+ display: flex;
+ justify-content: center;
+ align-items:center;
+ flex-direction: row;
+ 
+}
+.table > h1 {
+    margin:0.5rem
+}
+
+.table{
+    border-spacing: 0.7rem;
+    width:60%;
+    border: 1px solid black;
+    margin: 2rem;
+    /* margin:2rem auto; */
+}
+.table > tr > th,  .table > tr > td{
+    border-bottom: 1px solid black;
+    padding: 0.2rem 0;
+}
+
+.table > tr > td {
+    font-size: 1rem;
+    font-weight: 510;
+    text-align: center;
+    min-height: 300px;
+
+   
+}
+
+
+.productImg{
+    height: 3rem;
+    width: 3rem;
+    position: relative;
+    margin: auto;
+    
+}
+.deleteIcon{
+    display: flex;
+}
+.deleteIcon > button  {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    font-weight: 700;
+}
+.deleteIcon > button:hover{
+    background-color: #E782C2 ;
+}
+.trashIcon{
+   height: 2rem;
+   width: 2rem;
+   margin: auto;
+   cursor: pointer;
+}
+
+.trashIcon:hover{
+    transform: scale(1.05);
+}
+
+
+
+@media (max-width:500px) {
+    .table{
+        border-spacing: 0.1rem;
+    }
+   .deleteIcon{
+       flex-direction: column;
+   }
+}

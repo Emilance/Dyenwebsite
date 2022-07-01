@@ -2,12 +2,13 @@ import styles from  '../styles/Banner.module.css'
 
 
 
-const Banner = ({name}) => {
+const Banner = ({name,  img}) => {
     const style = {
-        backgroundImage:' linear-gradient( #0000006f 70%, #000000e1 90%),  url("/img/tops.png")',
-        height:'30rem',
+        backgroundImage:` linear-gradient( #0000006f 70%, #000000e1 90%),  url(${img})`,
+        height:'25rem',
         width:'100vw',
-
+        backgroundPosition:"center center",
+        backgroundAttachment:"fixed",
         backgroundRepeat: "no-repeat",
         backgroundSize:"cover"
     }

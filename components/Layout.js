@@ -3,9 +3,11 @@ import Footer from "./Footer";
 import SlidingBanner from "./SlidingBanner";
 import LogIn from "./LogIn";
 import { useState } from "react";
+import { createContext } from "react";
 
 
 
+export const toggleLog = createContext()
 const Layout = ( {children} ) => {
     const [logIn, setLogIn] = useState(false)
 
@@ -14,7 +16,10 @@ const Layout = ( {children} ) => {
     }
     return ( 
         <>
-            <Navbar toggleLogIn={toggleLogIn}/>
+        <toggleLog.Provider value={toggleLogIn}>
+
+            <Navbar toggleLogIn={ toggleLogIn }  />
+        </toggleLog.Provider>
             {logIn &&  <LogIn toggleLogIn={toggleLogIn}  />}
            
                 {children}

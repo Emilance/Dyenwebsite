@@ -5,17 +5,19 @@ import ProductCard from '../../components/ProductCard';
 import Link from 'next/link';
 import CollectionCarousel from '../../components/CollectionCarousel';
 import { useRouter } from 'next/router';
+import axios from 'axios';
 
-const Collection = () => {
+const Collection = ({productList}) => {
   const  router = useRouter();
   const  collectionName = router.query.collection
   const collectionInfo = {
       name: collectionName
   }
-    
+  console.log(productList)
+   
     return ( 
         <div className={styles.container}>
-            <Banner  name={collectionInfo.name}/>
+            <Banner  name={collectionInfo.name}  img={productList[0].img}/>
              <CollectionCarousel/>
             <div className={styles.filter}>
                 <select  >
@@ -26,9 +28,9 @@ const Collection = () => {
             </div>
 
             <div className={styles.productContainer}>
-                { productInfo.map((product, i) => {
+                { productList.map((product, i) => {
                     return (
-                        <Link  key={i} href="/product/45">
+                        <Link  key={i} href={`/product/${product._id}`}>
                             <a>
 
                             <ProductCard info={product}/>
@@ -43,3 +45,12 @@ const Collection = () => {
 }
  
 export default Collection;
+
+export const getServerSideProps = async () => {
+    const res = await axios.get("http://localhost:3000/api/products");
+    return{
+        props:{
+            productList: res.data
+        }
+    }
+}

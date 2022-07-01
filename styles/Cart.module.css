@@ -1,0 +1,103 @@
+.container{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+     min-height: 31rem;
+}
+.container > h1{
+   text-align: center;
+   margin: 0.7rem;
+
+}
+
+.cartContainer{
+   width:100%;
+   display: flex;
+
+   justify-content: center;
+   margin: 2rem 0;
+}
+
+.table{
+  border-spacing: 5px;
+  width: 90%;
+  border:1px solid black ;
+}
+
+.table > tr>  td ,.table > tr>  th {
+    border:1px solid black;
+}
+
+.table > tr>  td{
+  font-size: 1rem;
+  font-weight: 510;
+  text-align: center;
+  min-height: 300px;
+}
+.deleteIcon{
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    padding: 0.2rem;
+    cursor: pointer;
+}
+.deleteIcon:hover{
+    background-color: #E782C2;
+    border: 1px solid black;
+}
+
+.productImg{
+    position: relative;
+    height: 3rem;
+    width:3rem;
+    margin: auto;
+}
+.bottomDiv{
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.checkOutCon{
+    height:12rem;
+    width:15rem;
+    background-color: rgb(26, 21, 21);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align:start;
+    margin: 1rem;
+
+}
+
+.checkOutCon > p {
+    margin: 0.3rem;
+}
+.checkOutCon >p >span {
+    font-weight: 600;
+    color:#E782C2 ;
+}
+
+.checkOutCon > button {
+    padding: 0.5rem;
+    width: 80%;
+    cursor: pointer;
+    font-weight: 700;
+}
+.checkOutCon> button:hover{
+    background-color: #E782C2;
+}
+
+
+
+
+
+@media (max-width: 600px) {
+    .table{
+        width: 95%;
+    }
+    .table > tr>  td ,.table > tr>  th{
+        border: none;
+    }
+    
+}
