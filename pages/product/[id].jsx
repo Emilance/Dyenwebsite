@@ -50,7 +50,6 @@ const Product = ({product}) => {
                          <div className={styles.CTAContainer}>
                              <input
                               type="number"
-                               defaultValue='1'
                                value={order.quantity}
                                onChange={e => setOrder({...order, quantity :e.target.value})}
                                />

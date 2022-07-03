@@ -10,7 +10,7 @@ const ProductCard = ({ info }) => {
             </div>
             <div className={styles.details}>
                 <h4>{title}</h4>
-                <p>Price - <span>{prices}$</span></p>
+                <p>Price - <span>{prices[0]}$</span></p>
             <button> Add to Cart</button>
             </div>
 

@@ -118,6 +118,10 @@
     transition: 1s all ease-in-out;
     margin: 1rem;
 }
+.rightIcon > a{
+    text-decoration: none;
+    color:white;
+}
 
 .rightIconLogIn{
     position: relative;

@@ -74,8 +74,11 @@ const Navbar = ({ toggleLogIn }) => {
                     <RiUser3Fill title="log in" size="100%"/>
                  </div>
                  <div className={styles.rightIcon}>
-                     <Link href='/cart'>
+                     <Link href='/cart'  passHref>
+                         <a>
+
                      <AiOutlineShoppingCart title="cart" size='100%'/>
+                         </a>
                      </Link>
                      <div className={styles.cartCount}>{quantity}</div>
                  </div>
