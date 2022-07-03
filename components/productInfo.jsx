@@ -29,10 +29,6 @@ export const productInfo = [
         image: '/img/top/top2.jpg',
         price: 20
     },
-    {
-        name: "top1",
-        image: '/img/top/top6.jpg',
-        price: 20
-    },
+ 
 
 ]
