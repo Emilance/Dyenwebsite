@@ -4,7 +4,7 @@ import { useRef } from 'react';
 import Link from "next/link";
 
 
-const CollectionCarousel = () => {
+const CollectionCarousel = ({productList}) => {
       const carousel = useRef()
       const CollectionList =[
           {
@@ -54,11 +54,11 @@ const CollectionCarousel = () => {
                 <MdArrowForwardIos size="100%"/>
             </div>
             <div ref={carousel} className={styles.CollectionContainer}>
-               {CollectionList.map((item, i)=> {
+               {productList.map((item, i)=> {
                    return(
-                       <Link href={item.url} key={i}>
+                       <Link href={`/collection/${item.collec}`} key={i}>
                          <div className={styles.collectionCard}>
-                              {item.name}
+                              {item.collec}
                         </div>
                        </Link>
 

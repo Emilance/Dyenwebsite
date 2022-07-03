@@ -47,7 +47,7 @@ const SlidingBanner = () => {
              {bannerImg.map((img, i)=> {
             return(
             <div  key={i} className={styles.imgContainer}>       
-                  <Image    src={img}  layout="fill"  />
+                  <Image    src={img}  alt="" layout="fill"  />
             </div>
             )
              })}

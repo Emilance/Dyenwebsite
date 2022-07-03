@@ -24,7 +24,7 @@ const Contact = () => {
             
             <div  className={styles.formContainer} >
                  <div className={styles.leftImg} >
-                     <Image src="/img/top6.jpg" layout="fill"/>
+                     <Image src="/img/top6.jpg" alt="" layout="fill"/>
                  </div>
 
             <form > 

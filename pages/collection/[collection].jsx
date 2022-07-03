@@ -18,7 +18,7 @@ const Collection = ({productList}) => {
     return ( 
         <div className={styles.container}>
             <Banner  name={collectionInfo.name}  img={productList[0].img}/>
-             <CollectionCarousel/>
+             <CollectionCarousel  productList={productList}/>
             <div className={styles.filter}>
                 <select  >
                     <option value="relevance">relevance</option>

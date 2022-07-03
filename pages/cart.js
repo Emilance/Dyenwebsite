@@ -15,6 +15,8 @@ const Cart = () => {
         <h1>My Cart</h1>  
             <div className={styles.cartContainer} >
                 <table className={styles.table} >
+                    <thead>
+
                     <tr className={styles.trow}>
                         <th>Product</th>
                         <th>Name</th>
@@ -23,10 +25,13 @@ const Cart = () => {
                         <th>Quantity</th>
                         <th>Total</th>    
                     </tr>
+                    </thead>
 
                         {cart.products.map((product, i) => {
                             return(
-                    <tr key={i}>
+                    <tbody   key={i}>
+
+                    <tr>
                         <td>
                           <div className={styles.productImg}>
                             <Image src={product.img} alt="{name}"  layout="fill"/>
@@ -54,6 +59,7 @@ const Cart = () => {
                             </div>
                         </td>
                     </tr>
+                    </tbody>
 
 
                             )

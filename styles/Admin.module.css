@@ -5,7 +5,7 @@
  flex-direction: row;
  
 }
-.table > h1 {
+.container> h1 {
     margin:0.5rem
 }
 
@@ -16,12 +16,12 @@
     margin: 2rem;
     /* margin:2rem auto; */
 }
-.table > tr > th,  .table > tr > td{
+.table >thead> tr > th,  .table >tbody> tr > td{
     border-bottom: 1px solid black;
     padding: 0.2rem 0;
 }
 
-.table > tr > td {
+.table >tbody tr > td {
     font-size: 1rem;
     font-weight: 510;
     text-align: center;
@@ -30,7 +30,16 @@
    
 }
 
-
+.notification{
+    position: fixed;
+    padding: 1rem;
+    background-color:#E782C2;
+    width:10rem;
+   border-radius: 10px;
+   color: white;
+   font-weight: 600;
+   font-size: 1.2rem;
+}
 .productImg{
     height: 3rem;
     width: 3rem;
@@ -63,11 +72,18 @@
     transform: scale(1.05);
 }
 
+@media (max-width:1000px) {
+    .container{
+        flex-direction: column;
+    }
+}
+
 
 
 @media (max-width:500px) {
     .table{
         border-spacing: 0.1rem;
+        width:90%;
     }
    .deleteIcon{
        flex-direction: column;

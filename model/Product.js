@@ -7,6 +7,11 @@ const ProductSchema = new mongoose.Schema({
         required:true,
         maxlength: 60,
     },
+    collec:{
+        type:String,
+        required:true,
+        maxlength: 60,
+    },
     desc:{
         type: String,
         required: true,
@@ -21,13 +26,13 @@ const ProductSchema = new mongoose.Schema({
         required: true
     },
     
-    size:{
-        type:[{
-            text:{type:String, required:true},
-            price:{type:Number, required: true},
-        },
-    ],
-    },
+    // size:{
+    //     type:[{
+    //         text:{type:String, required:true},
+    //         price:{type:Number, required: true},
+    //     },
+    // ],
+    // },
 },
      { timestamps: true }
 );

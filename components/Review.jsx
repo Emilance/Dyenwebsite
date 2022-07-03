@@ -81,7 +81,7 @@ const Reviews = () => {
 
                             <div className={styles.upperCard}>
                                 <div className={styles.cardImg}>
-                                    <Image src ={content.img} style={{borderRadius: "20px"}} layout="fill" />
+                                    <Image src ={content.img} alt="" style={{borderRadius: "20px"}} layout="fill" />
                                 </div>
                                     <div className={styles.imgDetails}>
                                         <p>{content.name} </p>

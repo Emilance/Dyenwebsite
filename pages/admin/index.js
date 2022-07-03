@@ -2,13 +2,29 @@ import styles from "../../styles/Admin.module.css"
 import Image from "next/image";
 import axios from "axios";
 import { BiTrash} from "react-icons/bi"
+import { useState } from "react";
+import  { useRouter } from "next/router";
 
 const Admin = ({productList}) => {
-    console.log(productList)
+ const   router = useRouter()
+    const [deleteReport, setDeleteReport] = useState(null)
+    const deleteProduct = async(id) => {
+        try {
+            res = await axios.delete(`http://localhost:3000/api/products/${id}`)    
+                setDeleteReport(res);
+               router.replace("/")
+           
+        } catch (error) {
+            console.log(error)
+        }
+
+    }
+   console.log(productList)
     return ( 
         <div className={styles.container} >
-                <table className={styles.table} >
                    <h1>Products</h1>
+                <table className={styles.table} >
+                   <thead>
                     <tr className={styles.trow}>
                         <th>Image</th>
                         <th>id</th>
@@ -16,9 +32,11 @@ const Admin = ({productList}) => {
                         <th>Price</th>
                         <th>Action</th>   
                     </tr>
-                    {productList.map((product, i) => {
+                    </thead>
+                    {productList &&
+                   ( productList.map((product, i) => {
                     return(
-
+                    <tbody  key={i}>
                     <tr >
                         <td className={styles.imgCon}>
                           <div className={styles.productImg}>
@@ -38,18 +56,22 @@ const Admin = ({productList}) => {
                         <td>
                             <div className={styles.deleteIcon}>
                              <button className={styles.button} >Edit</button>
-                             <div className={styles.trashIcon}>
+                             <div  onClick={() =>deleteProduct(product._id)} className={styles.trashIcon}>
                                 <BiTrash size="100%"/>
                             </div>
                             </div>
                         </td>   
                       </tr>
+                      </tbody>
                     )
-                    })}
+                    }))
+                }
                 </table>
-
-                <table className={styles.table} >
+                {deleteReport &&   <p className={styles.notification}>jj{deleteReport}</p> }
+               
                    <h1>Orders</h1>
+                <table className={styles.table} >
+                   <thead>
                     <tr className={styles.trow}>
                         <th>Id</th>
                         <th>Customer</th>
@@ -58,6 +80,8 @@ const Admin = ({productList}) => {
                         <th>Status</th>   
                         <th>Action</th>
                     </tr>
+                    </thead>
+                    <tbody>
                     <tr >
                         <td className={styles.imgCon}>
                         <span className={styles.id}>622hd..</span>
@@ -82,6 +106,7 @@ const Admin = ({productList}) => {
                             
                         </td>   
                       </tr>
+                      </tbody>
                 </table>
         </div>
      );
@@ -91,7 +116,7 @@ export default Admin;
 
 export const getServerSideProps = async (context) => {
     const adminCookie =context.req?.cookies  || ""
-    if(adminCookie !== process.env.TOKEN){
+    if(adminCookie.token !== process.env.TOKEN){
         return{
             redirect:{
                 destination:"/admin/login",

@@ -3,3 +3,16 @@
   background-color:white;
 
 }
+
+
+.productButton{
+  padding:1rem;
+  margin: 0.5rem;
+  background-color: #E782C2 ;
+  border: none;
+  cursor: pointer;
+}
+
+.productButton:hover{
+  transform: scale(1.05);
+}

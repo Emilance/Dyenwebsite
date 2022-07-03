@@ -22,11 +22,11 @@
   border:1px solid black ;
 }
 
-.table > tr>  td ,.table > tr>  th {
+.table >thead> tr>  td , .table >tbody> tr>  th {
     border:1px solid black;
 }
 
-.table > tr>  td{
+.table >tbody> tr>  td{
   font-size: 1rem;
   font-weight: 510;
   text-align: center;
@@ -96,7 +96,7 @@
     .table{
         width: 95%;
     }
-    .table > tr>  td ,.table > tr>  th{
+    .table >thead> tr>  td , .table >tbody> tr>  th {
         border: none;
     }
     
