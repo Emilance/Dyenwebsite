@@ -30,6 +30,13 @@
 .formContainer> form{
     flex:1;
 }
+.success{
+    height: 2rem;
+    background-color: rgb(179, 182, 184);
+    color:black;
+    font-size: 1.5rem;
+    text-align: center;
+}
  .field{
       
  }

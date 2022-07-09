@@ -13,7 +13,7 @@ const Collection = ({productList}) => {
   const collectionInfo = {
       name: collectionName
   }
-  console.log(productList)
+ 
    
     return ( 
         <div className={styles.container}>

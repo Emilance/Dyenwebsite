@@ -30,7 +30,7 @@ const AddProductForm = ({toggleForm, setFormOpen}) => {
         img: url 
        };
        await axios.post("http://localhost:3000/api/products", product);
-       setFormOpen(false)
+       setFormOpen(false);
      } catch (error) {
        console.log(error)
      }

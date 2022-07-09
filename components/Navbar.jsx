@@ -62,7 +62,7 @@ const Navbar = ({ toggleLogIn }) => {
                              Contact
                      </li>
                  </Link>
-                <Link href='/collection/HAT'>
+                <Link href='/collection/COLLECTION'>
                      <li className={styles.listItem}>
                              <a>Collection</a>
                      </li>

@@ -6,6 +6,7 @@ import { BiArrowBack} from 'react-icons/bi'
 
 const LogIn = ({toggleLogIn}) => {
     const [Form, setForm] = useState("logIn")
+    const [loginData, setLoginData]  = useState({ email :"", password: ""})
 
     const switchForm =(x) => {
         if(x === 1  && Form == "signIn"){
@@ -36,8 +37,16 @@ const LogIn = ({toggleLogIn}) => {
            
             <>
             <form className={styles.form} >
-                     <input type="text" placeholder="Email"/>    
-                     <input type="password" placeholder="password"/>
+                     <input type="text"
+                      placeholder="Email"
+                      value={loginData.email}
+                      onChange={e => setLoginData({...loginData, email: e.target.value})}
+                      />    
+                     <input type="password" 
+                     placeholder="password"
+                     value={loginData.password}
+                     onChange={e => setLoginData({...loginData, password: e.target.value})}
+                     />
                  <input type='submit'  value="SUBMIT"/>
             </form> 
              </>

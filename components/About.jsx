@@ -35,12 +35,12 @@ const About = () => {
         <div className={styles.container}>
             <div className={styles.left}>
                    <h1>WHAT DO WE DO</h1>
-                   <p>We are starting  a new service where you re allowed to send us your clothes for tie dying, all you have to do is send us your clothes and tell us some colors you might like on 
-                       the clothes then the rest is history
+                   <p>Dyen clothing motivates African youth with various motivational qoutes inscribed on on her clothes, we pass our messages through every single means we could think of , from the meaning of our name,
+                        our website, our clothes to our packaging boxes.
                    </p>
                    <p>
-                       The most interesting part is no one really knows the result of a tie and dyed clothes( you might have an idea of how it might turn out but not fully) this will give us an opportunity to always 
-                       hit you with a surprise
+                   Majority of african youths have been compelled to believe being born as a black is a detriment to their great aspiration or plan to move the world. Millions of youth as a result of this prefer to seek greener
+                    pasture abroad, while some venture into illegal jobs some started internet fraud and cyber crimes <a href="/about">see more ..</a>
                    </p>
             </div>
             <div className={styles.right}>

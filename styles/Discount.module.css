@@ -1,0 +1,53 @@
+.container{
+  background-color: #E782C2;
+  width: 100%;
+  display: flex;
+  padding: 0.5rem 2rem;
+  align-items: center;
+  justify-content: space-between;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+.right, .left {
+    margin:2rem;
+}
+
+.right>p, .left > p{
+    color: rgb(247, 247, 247);
+    margin:0.8rem;
+    font-size: 1.3rem;
+}
+
+.left  > button{
+       padding: 0.8rem;
+       border-radius: 1rem;
+       border:2px solid black;
+       font-weight: 600;
+       margin: 1rem 1rem 1rem 0;
+       background-color:transparent ;
+       cursor: pointer;
+}
+
+.left  > button:hover{
+    transform:scale();
+}
+
+
+.image{
+    position: relative;
+    width: 15rem;
+    height: 15rem;  
+}
+
+
+
+
+
+
+
+
+@media (max-width:700px) {
+    .container{
+        flex-direction: column;
+    }
+}

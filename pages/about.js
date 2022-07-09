@@ -41,16 +41,20 @@ const About = () => {
                         </p>
                     </div>     
                  </div>
-              
+                  
                  <div className={styles.section}>
-                    <div className={styles.imgContainer}>
-                        <Image src="/img/boy2.png"  layout="fill"  alt="" />
-                    </div>
+         
                     <div className={styles.textContainer}>
-                        <h2>WHO ARE WE ?</h2>
-                            <p>Dyen is a clothing brand founded by her current CEO, Alabi Elijah  whose motivation
-                             emanated from his ambition to inspire africa youths, gear them up and trigger their aspirations toward legal and great exploitations
+                       
+                            <p>Meanwhile being  an africa doesn't make anyone less privilegde, Dyen clothing motivates African youth with various motivational qoutes inscribed on 
+                                on her clothes, we pass our messages yhrough every single means we could think of , from the meaning of our name,  our website, our clothes to our packaging boxes.
+                            </p>
+                            <p>
+                              <span>DYEN</span>   is derived from the word <span>DYNASTY</span> and <span>YEARN</span>
 
+                              DYNASTY - meaning  a lineage or family.
+                              YEARN   - Depicting the act of longing for a thing
+                              DYEN -- YEARNING FOR DYNASTY
                             </p>
                     </div>
               </div>

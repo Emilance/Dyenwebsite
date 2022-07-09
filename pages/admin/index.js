@@ -22,6 +22,10 @@ const Admin = ({productList}) => {
    console.log(productList)
     return ( 
         <div className={styles.container} >
+            <div className={styles.productcon}>
+
+
+
                    <h1>Products</h1>
                 <table className={styles.table} >
                    <thead>
@@ -108,6 +112,7 @@ const Admin = ({productList}) => {
                       </tr>
                       </tbody>
                 </table>
+            </div>
         </div>
      );
 }

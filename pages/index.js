@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { useState } from 'react'
 import About from '../components/About'
 import AddProductsForm from '../components/AddProductForm'
+import Discount from '../components/Discount'
 import Navbar from '../components/Navbar'
 import Reviews from '../components/Review'
 import SlidingBanner from '../components/SlidingBanner'
@@ -24,6 +25,7 @@ export default function Home({admin}) {
           
            <SlidingBanner/>
            <About/>
+           <Discount/>
            <Reviews/>
            {admin && 
            <button  onClick={toggleForm} className={styles.productButton}> Create New Product</button>
@@ -48,3 +50,7 @@ return{
   }
 }
 }
+
+
+
+// mongodb+srv://dyenclothing:dyenclothing@cluster0.ha9e5.mongodb.net/?retryWrites=true&w=majoritynp
