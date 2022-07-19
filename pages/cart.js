@@ -70,7 +70,7 @@ const Cart = () => {
 
             <div className={styles.checkOutCon}>
                 <p>SubTotal - <span>${cart.total}</span></p>
-                <p>Discount - <span>#{0.05 * cart.total}</span></p>
+                <p>Discount - <span>${0.05 * cart.total}</span></p>
                 <p>Total - <span>${cart.total - 0.05 * cart.total}</span></p>
                 <button className={styles.checkout}>Check Out</button>
             </div>
@@ -81,3 +81,23 @@ const Cart = () => {
 }
  
 export default Cart;
+
+
+export const getServerSideProps = async (ctx) => {
+    const userCookie =ctx.req?.cookies  || ""
+    if(userCookie.userToken !== process.env.USER_TOKEN){
+        return{
+            redirect:{
+                destination:"/login",
+                permanent:false
+            }
+        }
+    }
+    return{
+        props:{
+          
+        }
+    }
+  
+    
+}

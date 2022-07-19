@@ -18,7 +18,7 @@ const Discount = () => {
                 <p>10% OFF</p>
                 <h1>SUMMER DISCOUNT</h1>
                 <p> 1 Month Gaurantee</p>
-                <Link href="/collection/sport">
+                <Link href="/product">
                 <button> SHOP NOW</button>
                 </Link>
             </div>

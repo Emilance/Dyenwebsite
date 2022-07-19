@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import styles from '../styles/LogIn.module.css'
-import SignInForm from './SignInForm';
 import { BiArrowBack} from 'react-icons/bi'
+import SignInForm from '../components/SigninForm';
 
 
-const LogIn = ({toggleLogIn}) => {
+const LogIn = () => {
     const [Form, setForm] = useState("logIn")
     const [loginData, setLoginData]  = useState({ email :"", password: ""})
 
@@ -19,10 +19,8 @@ const LogIn = ({toggleLogIn}) => {
     return ( 
 
         <div className={styles.container}>
+            
             <div className={styles.formContainer}>
-            <div onClick={toggleLogIn} className={styles.backArrow}>
-                <BiArrowBack size="100%"/>
-            </div>
                 <div className={styles.header}>
                     <div onClick={() => switchForm(1)} className={styles.subHeader}>
                         LOGIN

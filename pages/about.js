@@ -46,8 +46,8 @@ const About = () => {
          
                     <div className={styles.textContainer}>
                        
-                            <p>Meanwhile being  an africa doesn't make anyone less privilegde, Dyen clothing motivates African youth with various motivational qoutes inscribed on 
-                                on her clothes, we pass our messages yhrough every single means we could think of , from the meaning of our name,  our website, our clothes to our packaging boxes.
+                            <p>Meanwhile being  an africa doesnt make anyone less privilegde, Dyen clothing motivates African youth with various motivational qoutes inscribed on 
+                                on her clothes, we pass our messages through every single means we could think of , from the meaning of our name,  our website, our clothes to our packaging boxes.
                             </p>
                             <p>
                               <span>DYEN</span>   is derived from the word <span>DYNASTY</span> and <span>YEARN</span>
@@ -58,6 +58,10 @@ const About = () => {
                             </p>
                     </div>
               </div>
+             <div className={styles.ButtonCon}>
+                 <button > SEE ALL OUR PRODUCTS</button>
+                 <button >WANT TO CONTACT US ?</button>
+             </div>
              </div>
         </div>
      );

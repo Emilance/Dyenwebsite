@@ -2,41 +2,19 @@ import styles from '../styles/CollectionCarousel.module.css'
 import {MdArrowForwardIos, MdArrowBackIos } from "react-icons/md"
 import { useRef } from 'react';
 import Link from "next/link";
+import { useDispatch } from 'react-redux';
+import { getProducts } from '../pages/redux/productSlice';
 
 
 const CollectionCarousel = ({productList}) => {
       const carousel = useRef()
-      const CollectionList =[
-          {
-              name : "HAT",
-              url: "/collection/HAT",  
-          },
-         {
-            name : "SCHOOL WEAR",
-            url: "/collection/SCHOOL WEAR",  
-        },
-        {
-            name : "SPORT",
-            url: "/collection/SPORT WEAR",  
-        },
-        {
-            name : "SNEAKERS",
-            url: "/collection/SNEAKERS",  
-        },
-        {
-            name : "FACE CAP",
-            url: "/collection/FACE CAP",  
-        },
-        {
-            name : "HEAD BAND",
-            url: "/collection/HEAD BAND",  
-        },
-        {
-            name : "HOODIES",
-            url: "/collection/HOODIES",  
-        },
-      ]
-
+      const dispatch = useDispatch()
+      let collection = []
+      productList.map(e => {
+          collection.push(e.collec)
+      })
+      const uniqueCollection= [...new Set(collection)]
+      dispatch(getProducts({...productList, uniqueCollection}))
     const handleArrowClick = (x) => {
        if(x===1) {
            carousel.current.scrollLeft  += 200;
@@ -54,11 +32,11 @@ const CollectionCarousel = ({productList}) => {
                 <MdArrowForwardIos size="100%"/>
             </div>
             <div ref={carousel} className={styles.CollectionContainer}>
-               {productList.map((item, i)=> {
+               {uniqueCollection.map((item, i)=> {
                    return(
-                       <Link href={`/collection/${item.collec}`} key={i}>
+                       <Link href={`/collection/${item}`} key={i}>
                          <div className={styles.collectionCard}>
-                              {item.collec}
+                              {item}
                         </div>
                        </Link>
 

@@ -1,13 +1,14 @@
 import axios from "axios";
 import { useState } from "react";
 import styles from "../styles/SignInForm.module.css"
+import {useRouter}  from "next/router"
 
 
 const SignInForm = () => {
 
     const [user, setUser] =useState({fullName:"", email:"", password: "", confirmPassword: "" })
     const [error, setError] = useState(null);
-
+    const router = useRouter();
     const {fullName, email, password, confirmPassword} = user
     const createUser = async(e) =>{
         e.preventDefault()
@@ -19,8 +20,9 @@ const SignInForm = () => {
 
 
             try {          
-                res = await axios.post("http://localhost:3000/api/user",  user);
+           const     res = await axios.post("http://localhost:3000/api/user",  user);
                 console.log(res)
+                router.push("/") ;
             } catch (error) {
                 console.log(error);            
             }

@@ -30,10 +30,12 @@ const MobileNavigation = ( { toggleNav,  toggleLogIn}) => {
                              <a>Collection</a>
                      </li>
                      </Link>
+                     <Link href='/login'>
                      <div className={styles.buttonContainer}>
-                         <button  onClick={showLogIn  }>Login</button>
-                         <button  onClick={ showLogIn}>Sign Up</button>
+                         <button onClick={toggleNav} >Login</button>
+                         <button onClick={toggleNav} >Sign Up</button>
                      </div>
+                     </Link>
              </ul>
             </div>
         </div>

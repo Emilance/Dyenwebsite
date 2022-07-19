@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import About from '../components/About'
 import AddProductsForm from '../components/AddProductForm'
 import Discount from '../components/Discount'
@@ -7,13 +7,19 @@ import Navbar from '../components/Navbar'
 import Reviews from '../components/Review'
 import SlidingBanner from '../components/SlidingBanner'
 import styles from '../styles/Home.module.css'
+import { useDispatch } from 'react-redux'
+import { logInUser } from './redux/userSlice'
+import axios from 'axios'
 
+export default function Home({admin, user, allProducts}) {
+     const dispatch = useDispatch()
+     dispatch(logInUser(user))
 
-export default function Home({admin}) {
   const [formOpen, setFormOpen]  = useState(false)
   const toggleForm =() => {
     setFormOpen(!formOpen)
   }
+  
   return (
     <div className={styles.container}> 
            <Head>
@@ -24,7 +30,7 @@ export default function Home({admin}) {
           {formOpen &&   <AddProductsForm       setFormOpen={setFormOpen} toggleForm={toggleForm} /> }
           
            <SlidingBanner/>
-           <About/>
+           <About  allProducts={allProducts}/>
            <Discount/>
            <Reviews/>
            {admin && 
@@ -38,15 +44,27 @@ export default function Home({admin}) {
 
 
 export const getServerSideProps = async (context) => {
-  const adminCookie = context.req?.cookies
+
+  const cookies = context.req?.cookies
+  const adminCookie = cookies.token
+  const userCookie = cookies.userToken
   let admin = false
-  if(adminCookie.token === process.env.TOKEN){
+  let user = false
+  if(adminCookie === process.env.TOKEN){
     admin = true
   }
+  if(userCookie === process.env.USER_TOKEN){
+    user = true
+  }
+  const products = await axios.get(`http://localhost:3000/api/products`);
+
+
 return{
 
   props: {
-    admin
+    admin,
+    user,
+    allProducts: products.data
   }
 }
 }

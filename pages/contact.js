@@ -31,7 +31,6 @@ const Contact = () => {
         <div className={styles.container}>
             <div className={styles.bannerImg} style={style}>
                      <h1> Contact Us</h1>
-
             </div>
             
             <div  className={styles.formContainer} >

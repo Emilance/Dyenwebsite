@@ -1,4 +1,10 @@
-
+.Pcontainer{
+    margin:3rem 0;
+}
+.Pcontainer > h1{
+    text-align: center;
+    margin:3rem   2rem;
+}
 
 .filter{
     margin-left: 20%;

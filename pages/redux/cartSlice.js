@@ -16,7 +16,7 @@ import { createSlice } from "@reduxjs/toolkit";
          }
      },
      reset:(state) =>{
-         state =initialState;
+         state = initialState;
      }
 })
 

@@ -12,7 +12,9 @@ import { RiUser3Fill } from "react-icons/ri"
 import { useState } from "react";
 import { useSelector } from "react-redux";
 
-const Navbar = ({ toggleLogIn }) => {
+const Navbar = () => {
+    const userLog = useSelector(state => state.user)
+    const user = userLog.user
     const [open, setOpen] = useState(false)
    const quantity = useSelector(state => state.cart.quantity)
     const toggleNav = ()=> {
@@ -62,7 +64,7 @@ const Navbar = ({ toggleLogIn }) => {
                              Contact
                      </li>
                  </Link>
-                <Link href='/collection/COLLECTION'>
+                <Link href='/collection/cap'>
                      <li className={styles.listItem}>
                              <a>Collection</a>
                      </li>
@@ -70,9 +72,12 @@ const Navbar = ({ toggleLogIn }) => {
              </ul>
             </div>
             <div className={styles.rightNavbar}>
-                 <div onClick={toggleLogIn} className={styles.rightIconLogIn }>
+                {user &&
+                
+                 <div className={styles.rightIconLogIn }>
                     <RiUser3Fill title="log in" size="100%"/>
                  </div>
+                }
                  <div className={styles.rightIcon}>
                      <Link href='/cart'  passHref>
                          <a>
@@ -83,7 +88,7 @@ const Navbar = ({ toggleLogIn }) => {
                      <div className={styles.cartCount}>{quantity}</div>
                  </div>
             </div>
-            {open &&   <MobileNavigation  toggleLogIn={toggleLogIn} toggleNav={ toggleNav }/> }
+            {open &&   <MobileNavigation  toggleNav={ toggleNav }/> }
            
 
         </div>
@@ -91,3 +96,6 @@ const Navbar = ({ toggleLogIn }) => {
 }
  
 export default Navbar;
+
+
+  
