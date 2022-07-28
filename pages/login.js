@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styles from '../styles/LogIn.module.css'
 import { BiArrowBack} from 'react-icons/bi'
-import SignInForm from '../components/SigninForm';
+import SignInForm from '../components/SignInForm';
 
 
 const LogIn = () => {
