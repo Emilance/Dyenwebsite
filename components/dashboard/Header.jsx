@@ -3,6 +3,7 @@ import { BiSearch} from "react-icons/bi"
 import  { BsChatDots} from "react-icons/bs"
 import { IoMdNotificationsOutline  }  from "react-icons/io"
 import styles from "../../styles/Dheader.module.css"
+import Image from "next/image";
 
 const  Header = () =>  {
     return(
@@ -20,7 +21,7 @@ const  Header = () =>  {
              <IoMdNotificationsOutline size= "22" />
             </div>
             <div className={styles.dpContainer}>
-                <img src="/Emilance.png" className={styles.dp} alt="admin"/>
+                <Image src="/Emilance.png" className={styles.dp} alt="admin"/>
             </div>
         </div>
         </div>
