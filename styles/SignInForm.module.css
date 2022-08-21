@@ -42,3 +42,7 @@
 .container > form > input[type="submit"]:hover{
     background-color: #e782c2ad;
 }
+
+@media (max-width:600px) {
+   
+}

@@ -1,0 +1,52 @@
+
+
+.sidebar{
+    width: 9rem;
+    background-color: aliceblue;
+    height: 100vh;
+   
+}
+
+.logoContainer{
+    height: 20%;
+    display: grid;
+    place-content: center;
+    color: rgb(5, 50, 90);
+}
+
+.widgetContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.widgetIcon{
+    margin:1rem 0;
+    color: rgb(133, 133, 133);
+    cursor: pointer;
+}
+
+.widgetIcon:hover {
+    color:rgb(8, 122, 223);
+    
+}
+
+.selected{
+    margin:1rem 0;
+    color: rgb(133, 133, 133);
+    cursor: pointer;
+    color: rgb(5, 50, 90);
+    box-shadow: 0 0  10px 5px rgb(5, 50, 90);
+}
+.widgetIcon::selected {
+  color: yellow;
+}
+
+
+
+@media (max-width:900px) {
+   .sidebar{
+       display: none;
+   }
+}

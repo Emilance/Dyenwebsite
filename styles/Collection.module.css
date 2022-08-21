@@ -33,7 +33,10 @@
 
 @media (max-width:500px) {
     .productContainer{
-        margin: 1rem;
+        margin: 0.5rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.6rem;
     }
 }
 

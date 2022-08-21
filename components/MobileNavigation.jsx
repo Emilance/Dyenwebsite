@@ -25,7 +25,7 @@ const MobileNavigation = ( { toggleNav,  toggleLogIn}) => {
                              Contact
                      </li>
                      </Link>
-                    <Link href='/collection/HAT'>
+                    <Link href='/collection/cap'>
                      <li onClick={toggleNav} className={styles.listItem}>
                              <a>Collection</a>
                      </li>

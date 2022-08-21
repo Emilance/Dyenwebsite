@@ -17,6 +17,10 @@ const Collection = ({productList, allProducts}) => {
    
     return ( 
         <div className={styles.container}>
+            {productList ? 
+            
+            
+            <>
             <Banner  name={collectionInfo.name}  img={productList[0].img}/>
              <CollectionCarousel  productList={allProducts}/>
             <div className={styles.filter}>
@@ -31,14 +35,18 @@ const Collection = ({productList, allProducts}) => {
                 { productList.map((product, i) => {
                     return (
                         <Link  key={i} href={`/product/${product._id}`}>
-                            <a>
+                         
 
                             <ProductCard info={product}/>
-                            </a>
+                        
                         </Link>
                     )
                 })}
             </div>
+            </>
+            :
+            <h1> LOADING.......</h1>
+            }
            
         </div>
      );

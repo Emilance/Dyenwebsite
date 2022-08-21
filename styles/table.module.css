@@ -1,0 +1,49 @@
+
+
+.tableCon {
+    width:100%; 
+    flex:2;
+    height: 18rem;
+    overflow-y: auto;
+
+   
+}
+
+.table{
+    width: 100%;
+    padding:0 1rem;
+    background-color: white;
+}
+
+.tableimg{
+    height: 2rem;
+    width: 2rem;
+}
+
+.image {
+    height: 2rem;
+    width: 2rem;
+    position: relative;
+}
+
+.table > thead  {
+     height: 2rem;
+     margin-bottom: 1rem;
+   
+}
+
+.table > thead >tr >th {
+    font-weight: 500;
+}
+
+.table >tbody {
+    background-color: rgb(202, 199, 199);
+    height: 2em;
+  
+}
+
+.table >tbody > tr > td {
+    border-spacing:0;
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
+}

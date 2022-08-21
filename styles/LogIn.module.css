@@ -83,3 +83,13 @@
 .formContainer > .form > input[type="submit"]:hover{
     background-color: #e782c2ad;
 }
+
+@media (max-width:600px) {
+    .container > form {
+        width: 90vw;
+    }
+    .header {
+        width: 90%;
+        margin: auto;
+    }
+}
