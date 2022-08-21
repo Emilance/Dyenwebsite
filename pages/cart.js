@@ -2,7 +2,7 @@ import styles  from '../styles/Cart.module.css'
 import Image from "next/image";
 import { useDispatch, useSelector } from 'react-redux';
 import {BiTrash}  from 'react-icons/bi'
-import  { reset } from "./redux/cartSlice"
+import  { reset } from "../store/cartSlice"
 
 
 const Cart = () => {
@@ -84,15 +84,15 @@ export default Cart;
 
 
 export const getServerSideProps = async (ctx) => {
-    const userCookie =ctx.req?.cookies  || ""
-    if(userCookie.userToken !== process.env.USER_TOKEN){
-        return{
-            redirect:{
-                destination:"/login",
-                permanent:false
-            }
-        }
-    }
+    // const userCookie =ctx.req?.cookies  || ""
+    // if(userCookie.userToken !== process.env.USER_TOKEN){
+    //     return{
+    //         redirect:{
+    //             destination:"/login",
+    //             permanent:false
+    //         }
+    //     }
+    // }
     return{
         props:{
           

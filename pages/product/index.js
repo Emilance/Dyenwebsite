@@ -10,7 +10,7 @@ import axios from 'axios';
 const Collection = ({ allProducts}) => {
   const  router = useRouter();
 
- 
+  console.log(allProducts)
    
     return ( 
         <div className={styles.Pcontainer}>
@@ -27,10 +27,8 @@ const Collection = ({ allProducts}) => {
                 { allProducts.map((product, i) => {
                     return (
                         <Link  key={i} href={`/product/${product._id}`}>
-                            <a>
-
-                            <ProductCard info={product}/>
-                            </a>
+                         
+                            <ProductCard info={product}/>             
                         </Link>
                     )
                 })}

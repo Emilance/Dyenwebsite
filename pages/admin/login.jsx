@@ -11,7 +11,7 @@ const AdminLogin = () => {
     const router = useRouter();
     const submitForm = async (e) =>{
         e.preventDefault()
- axios.post("http://localhost:3000/api/login",  { username, password}).then(
+ axios.post("http://localhost:3000/api/login",  JSON.stringify({ username, password})).then(
        res => {
            router.push("/admin")
        }

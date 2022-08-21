@@ -3,7 +3,7 @@ import {MdArrowForwardIos, MdArrowBackIos } from "react-icons/md"
 import { useRef } from 'react';
 import Link from "next/link";
 import { useDispatch } from 'react-redux';
-import { getProducts } from '../pages/redux/productSlice';
+import { getProducts } from '../store/productSlice';
 
 
 const CollectionCarousel = ({productList}) => {

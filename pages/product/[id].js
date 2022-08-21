@@ -3,7 +3,7 @@ import Image from "next/image";
 import axios from "axios";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addProduct } from "../redux/cartSlice";
+import { addProduct } from "../../store/cartSlice";
 
 
 const Product = ({product}) => {

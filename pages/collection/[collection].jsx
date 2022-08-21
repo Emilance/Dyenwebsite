@@ -14,7 +14,7 @@ const Collection = ({productList, allProducts}) => {
       name: collectionName
   }
  
-   
+ 
     return ( 
         <div className={styles.container}>
             {productList ? 
@@ -35,9 +35,11 @@ const Collection = ({productList, allProducts}) => {
                 { productList.map((product, i) => {
                     return (
                         <Link  key={i} href={`/product/${product._id}`}>
-                         
-
+                         <a>
                             <ProductCard info={product}/>
+
+                         </a>
+
                         
                         </Link>
                     )

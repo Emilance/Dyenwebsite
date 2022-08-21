@@ -8,7 +8,7 @@ import Reviews from '../components/Review'
 import SlidingBanner from '../components/SlidingBanner'
 import styles from '../styles/Home.module.css'
 import { useDispatch } from 'react-redux'
-import { logInUser } from './redux/userSlice'
+import { logInUser } from '../store/userSlice'
 import axios from 'axios'
 
 export default function Home({admin, user, allProducts}) {
@@ -30,7 +30,10 @@ export default function Home({admin, user, allProducts}) {
           {formOpen &&   <AddProductsForm       setFormOpen={setFormOpen} toggleForm={toggleForm} /> }
           
            <SlidingBanner/>
+           {allProducts &&
            <About  allProducts={allProducts}/>
+           }
+     
            <Discount/>
            <Reviews/>
            {admin && 

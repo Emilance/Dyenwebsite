@@ -18,7 +18,7 @@ const Contact = () => {
    const submitForm = async (e) => {
        e.preventDefault()
        try {
-           const   res =await  axios.post("http://localhost:3000/api/contact", contactUs);
+           const   res =await  axios.post("http://localhost:3000/api/contact", JSON.stringify(contactUs));
            setResponse(res.data.message)
            console.log(res.data.message)
            
