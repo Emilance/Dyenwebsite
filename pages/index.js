@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import About from '../components/About'
 import AddProductsForm from '../components/AddProductForm'
 import Discount from '../components/Discount'
@@ -13,7 +13,10 @@ import axios from 'axios'
 
 export default function Home({admin, user, allProducts}) {
      const dispatch = useDispatch()
-     dispatch(logInUser(user))
+  useEffect(() => {
+    dispatch(logInUser(user))
+
+  },[])   
 
   const [formOpen, setFormOpen]  = useState(false)
   const toggleForm =() => {
@@ -51,6 +54,8 @@ export const getServerSideProps = async (context) => {
   const cookies = context.req?.cookies
   const adminCookie = cookies.token
   const userCookie = cookies.userToken
+  const hostname = context.req.headers.host
+  console.log(hostname)
   let admin = false
   let user = false
   if(adminCookie === process.env.TOKEN){
@@ -59,7 +64,7 @@ export const getServerSideProps = async (context) => {
   if(userCookie === process.env.USER_TOKEN){
     user = true
   }
-  const products = await axios.get(`http://localhost:3000/api/products`);
+  const products = await axios.get("http://" + hostname + "/api/products");
 
 
 return{
