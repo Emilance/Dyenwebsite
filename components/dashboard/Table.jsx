@@ -3,7 +3,7 @@ import  styles from "../../styles/table.module.css"
 import Image from "next/image";
 
 const Table =({productList}) => {
-    console.log(productList)
+    
     return (
         <div  className={styles.tableCon}>
               
@@ -22,7 +22,7 @@ const Table =({productList}) => {
                             {productList.map((product, i) => {
 
                  return(
-                        <tr>
+                        <tr key={i} >
 
                                 <td>{product.i}</td>
                                 <td className={styles.image}>
