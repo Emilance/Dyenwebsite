@@ -22,7 +22,7 @@ export default function Home({admin, user, allProducts}) {
   const toggleForm =() => {
     setFormOpen(!formOpen)
   }
-  
+  console.log(allProducts)
   return (
     <div className={styles.container}> 
            <Head>
@@ -64,8 +64,7 @@ export const getServerSideProps = async (context) => {
   if(userCookie === process.env.USER_TOKEN){
     user = true
   }
-  const products = await axios.get("http://" + hostname + "/api/products");
-
+  const products = await axios.get(`http://${hostname}/api/products`);
 
 return{
 

@@ -64,9 +64,10 @@ const Product = ({product}) => {
 export default Product;
 
 
-export const getServerSideProps =  async ({params}) => {
+export const getServerSideProps =  async ({req , params}) => {
+    const hostname = req.headers.host
     console.log(params.id)
-    const res = await axios.get(`http://localhost:3000/api/products/${params.id}`);
+    const res = await axios.get(`http://${hostname}/api/products/${params.id}`);
     return{
         props:{
             product: res.data

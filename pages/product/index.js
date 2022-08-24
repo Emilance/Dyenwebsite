@@ -10,7 +10,7 @@ import axios from 'axios';
 const Collection = ({ allProducts}) => {
   const  router = useRouter();
 
-  console.log(allProducts)
+
    
     return ( 
         <div className={styles.Pcontainer}>
@@ -40,9 +40,12 @@ const Collection = ({ allProducts}) => {
  
 export default Collection;
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async (ctx) => {
+    const hostname = ctx.req.headers.host
 
-   const products = await axios.get(`http://localhost:3000/api/products`);
+   const products = await axios.get(`http://${hostname}/api/products`);
+
+
     return{
         props:{
             allProducts : products.data

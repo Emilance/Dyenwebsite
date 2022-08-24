@@ -10,7 +10,7 @@ const Admin = ({productList}) => {
     const [deleteReport, setDeleteReport] = useState(null)
     const deleteProduct = async(id) => {
         try {
-            res = await axios.delete(`http://localhost:3000/api/products/${id}`)    
+            res = await axios.delete(`https://dyen.vercel.app/api/products/${id}`)    
                 setDeleteReport(res);
                router.replace("/")
            
@@ -121,6 +121,7 @@ export default Admin;
 
 export const getServerSideProps = async (context) => {
     const adminCookie =context.req?.cookies  || ""
+    const hostname = context.req.headers.host
     if(adminCookie.token !== process.env.TOKEN){
         return{
             redirect:{
@@ -129,7 +130,7 @@ export const getServerSideProps = async (context) => {
             }
         }
     }
-    const res = await axios.get("http://localhost:3000/api/products");
+    const res = await axios.get(`http://${hostname}/api/products`);
     return{
         props:{
             productList: res.data

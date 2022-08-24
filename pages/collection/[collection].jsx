@@ -58,9 +58,10 @@ export default Collection;
 
 export const getServerSideProps = async (params) => {
     const collection = params.query.collection
+    const hostname = params.req.headers.host
 
-    const res = await axios.get(`http://localhost:3000/api/collections/${collection}`);
-    const products = await axios.get(`http://localhost:3000/api/products`);
+    const res = await axios.get(`http://${hostname}/api/collections/${collection}`);
+    const products = await axios.get(`http://${hostname}/api/products`);
     return{
         props:{
             productList: res.data,
