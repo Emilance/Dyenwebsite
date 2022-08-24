@@ -10,6 +10,7 @@ import styles from '../styles/Home.module.css'
 import { useDispatch } from 'react-redux'
 import { logInUser } from '../store/userSlice'
 import axios from 'axios'
+import useSWR from "swr";
 
 export default function Home({admin, user, allProducts}) {
      const dispatch = useDispatch()
@@ -64,8 +65,8 @@ export const getServerSideProps = async (context) => {
   if(userCookie === process.env.USER_TOKEN){
     user = true
   }
-  const products = await axios.get(`http://${hostname}/api/products`);
-
+  const res = await fetch(`http://${hostname}/api/products`);
+   const products = await res.json()
 return{
 
   props: {
@@ -75,6 +76,7 @@ return{
   }
 }
 }
+
 
 
 
