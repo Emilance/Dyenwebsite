@@ -5,12 +5,26 @@ import ProductCard from '../../components/ProductCard';
 import Link from 'next/link';
 import CollectionCarousel from '../../components/CollectionCarousel';
 import { useRouter } from 'next/router';
-import axios from 'axios';
+import { useEffect, useState } from 'react';
 
-const Collection = ({ allProducts}) => {
+const Collection = () => {
+
   const  router = useRouter();
+  const [allProducts, setAllProducts] = useState([])
+  const getProducts  = async () => {
+    const res = await fetch('/api/products');
+   const products = await res.json()
 
+   setAllProducts(products)
+     
+  }
 
+  useEffect(() => {
+    getProducts()
+
+  },[allProducts])  
+
+  console.log(allProducts)
    
     return ( 
         <div className={styles.Pcontainer}>
@@ -24,14 +38,19 @@ const Collection = ({ allProducts}) => {
             </div>
 
             <div className={styles.productContainer}>
-                { allProducts.map((product, i) => {
+                {allProducts ? allProducts.map((product, i) => {
                     return (
                         <Link  key={i} href={`/product/${product._id}`}>
-                         
+                         <a>
+
                             <ProductCard info={product}/>             
+                         </a>
                         </Link>
                     )
-                })}
+                })
+            :
+            <h1>Loading ....</h1>
+            }
             </div>
            
         </div>
@@ -40,15 +59,3 @@ const Collection = ({ allProducts}) => {
  
 export default Collection;
 
-export const getServerSideProps = async (ctx) => {
-    const hostname = ctx.req.headers.host
-
-   const products = await axios.get(`http://${hostname}/api/products`);
-
-
-    return{
-        props:{
-            allProducts : products.data
-        }
-    }
-}

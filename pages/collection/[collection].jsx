@@ -6,14 +6,35 @@ import Link from 'next/link';
 import CollectionCarousel from '../../components/CollectionCarousel';
 import { useRouter } from 'next/router';
 import axios from 'axios';
+import { useEffect, useState } from 'react';
 
-const Collection = ({productList, allProducts}) => {
+const Collection = () => {
   const  router = useRouter();
   const  collectionName = router.query.collection
   const collectionInfo = {
       name: collectionName
   }
- 
+
+  const  [allProducts, setAllProducts] = useState([])
+  const [productList, setProductList] = useState([])
+
+//fetching product base on categories 
+
+  const getProduct  = async () => {
+  const res = await fetch('/api/products');
+  const res2 = await fetch(`/api/collections/${collectionName}`);
+   const allProductsRes = await res.json()
+   const productListRes = await res2.json()
+
+    setAllProducts(allProductsRes)
+    setProductList(productListRes)
+     
+  }
+
+  useEffect(() => {
+    getProduct()
+
+  },[allProducts, productList])  
  
     return ( 
         <div className={styles.container}>
@@ -21,7 +42,10 @@ const Collection = ({productList, allProducts}) => {
             
             
             <>
+            {(productList.length > 0) &&
+            
             <Banner  name={collectionInfo.name}  img={productList[0].img}/>
+            }
              <CollectionCarousel  productList={allProducts}/>
             <div className={styles.filter}>
                 <select  >
@@ -56,16 +80,3 @@ const Collection = ({productList, allProducts}) => {
  
 export default Collection;
 
-export const getServerSideProps = async (params) => {
-    const collection = params.query.collection
-    const hostname = params.req.headers.host
-
-    const res = await axios.get(`http://${hostname}/api/collections/${collection}`);
-    const products = await axios.get(`http://${hostname}/api/products`);
-    return{
-        props:{
-            productList: res.data,
-            allProducts : products.data
-        }
-    }
-}

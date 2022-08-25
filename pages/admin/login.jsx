@@ -9,11 +9,12 @@ const AdminLogin = () => {
     const [admin, setAdmin] = useState({username: null, password: null, error: null})
     const {username, password, error}  =  admin
     const router = useRouter();
-    const submitForm = async (e) =>{
+    const submitForm = (e) =>{
         e.preventDefault()
- axios.post("http://localhost:3000/api/login",  JSON.stringify({ username, password})).then(
+    axios.post("http://localhost:3001/api/login", { username, password}).then(
        res => {
            router.push("/admin")
+           console.log(res)
        }
      ).catch(err => {
          console.log(err)

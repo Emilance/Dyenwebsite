@@ -2,12 +2,28 @@ import styles from "../../styles/Admin.module.css"
 import Image from "next/image";
 import axios from "axios";
 import { BiTrash} from "react-icons/bi"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import  { useRouter } from "next/router";
 
-const Admin = ({productList}) => {
+const Admin = () => {
  const   router = useRouter()
     const [deleteReport, setDeleteReport] = useState(null)
+    const [productList, setProductList] = useState([])
+ 
+
+    const getProducts  = async () => {
+     const res = await fetch('/api/products');
+    const products = await res.json()
+
+    setProductList(products)
+      
+   }
+
+   useEffect(() => {
+     getProducts()
+ 
+   },[productList])   
+
     const deleteProduct = async(id) => {
         try {
             res = await axios.delete(`https://dyen.vercel.app/api/products/${id}`)    
@@ -19,7 +35,7 @@ const Admin = ({productList}) => {
         }
 
     }
-   console.log(productList)
+  
     return ( 
         <div className={styles.container} >
             <div className={styles.productcon}>
@@ -121,7 +137,7 @@ export default Admin;
 
 export const getServerSideProps = async (context) => {
     const adminCookie =context.req?.cookies  || ""
-    const hostname = context.req.headers.host
+   
     if(adminCookie.token !== process.env.TOKEN){
         return{
             redirect:{
@@ -130,10 +146,10 @@ export const getServerSideProps = async (context) => {
             }
         }
     }
-    const res = await axios.get(`http://${hostname}/api/products`);
+
     return{
         props:{
-            productList: res.data
+          
         }
     }
 }

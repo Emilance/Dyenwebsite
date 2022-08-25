@@ -1,19 +1,46 @@
 import styles from "../../styles/Product.module.css"
 import Image from "next/image";
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addProduct } from "../../store/cartSlice";
+import { useRouter } from 'next/router';
 
 
-const Product = ({product}) => {
+const Product = () => {
    const [order, setOrder] =useState({size: "", quantity: "1"})
-   const [price, setPrice] = useState(product.prices[0])
+   const [product, setProducts] = useState([])
+
+  
    const dispatch  = useDispatch()
    const { quantity, size } = order
+   const router = useRouter();
+   const { id } = router.query;
 
+//fetching single product details from the server
 
-    const {title, prices, img, desc} = product;
+   const getProduct  = async () => {
+   const res = await fetch(`/api/products/${id}`);
+    const singleProduct = await res.json()
+ 
+    setProducts(singleProduct)
+      
+   }
+ 
+   useEffect(() => {
+     getProduct()
+ 
+   },[product])  
+if (product.prices){
+    var priceIndex = product.prices[0]
+}
+    const [price, setPrice] = useState(priceIndex)
+
+   console.log(product)
+// if(product){
+//     var {title, prices, img, desc} = product;
+// }
+    
     const handleSizeClick = (x) => {
             setPrice(product.prices[x])
     }
@@ -23,16 +50,19 @@ const Product = ({product}) => {
     return ( 
         <div className={styles.container}>
           
+       {(product) &&
 
             <div className={styles.product}>
                 <div className={styles.productsImg}>
-                     <Image src={img} alt={title}  layout="fill"/>
+                    {product.img  &&           
+                     <Image src={product.img} alt={product.title}  layout="fill"/>
+                    }
                 </div>
                 <div className={styles.productDetails}>
-                         <h1>{title}</h1>
+                         <h1>{product.title}</h1>
                          <hr/>
                          <h3>Price - <span>${price}</span></h3>
-                         <p>{desc}</p>
+                         <p>{product.desc}</p>
                   
                          <div className={styles.variant}>
                              <div className={styles.size}  value={order.size} onChange={e => setOrder({...order, size : e.target.value})}>
@@ -57,6 +87,8 @@ const Product = ({product}) => {
                          </div>
                 </div>
             </div>
+          
+       }
         </div>
      );
 }
@@ -64,13 +96,3 @@ const Product = ({product}) => {
 export default Product;
 
 
-export const getServerSideProps =  async ({req , params}) => {
-    const hostname = req.headers.host
-    console.log(params.id)
-    const res = await axios.get(`http://${hostname}/api/products/${params.id}`);
-    return{
-        props:{
-            product: res.data
-        }
-    }
-}
