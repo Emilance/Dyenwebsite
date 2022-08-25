@@ -12,17 +12,33 @@ import { logInUser } from '../store/userSlice'
 import axios from 'axios'
 import useSWR from "swr";
 
-export default function Home({admin, user, allProducts}) {
+export default function Home({admin, user}) {
+  const [allProducts, setAllProducts] = useState([])
      const dispatch = useDispatch()
+
+     const getProducts  = async () => {
+      const res = await fetch('/api/products');
+     const products = await res.json()
+     console.log(products)
+     setAllProducts(products)
+       
+    }
+
+    useEffect(() => {
+      getProducts()
+  
+    },[])   
+
   useEffect(() => {
     dispatch(logInUser(user))
-
   },[])   
+
 
   const [formOpen, setFormOpen]  = useState(false)
   const toggleForm =() => {
     setFormOpen(!formOpen)
   }
+ 
   console.log(allProducts)
   return (
     <div className={styles.container}> 
@@ -56,7 +72,7 @@ export const getServerSideProps = async (context) => {
   const adminCookie = cookies.token
   const userCookie = cookies.userToken
   const hostname = context.req.headers.host
-  console.log(hostname)
+
   let admin = false
   let user = false
   if(adminCookie === process.env.TOKEN){
@@ -65,14 +81,13 @@ export const getServerSideProps = async (context) => {
   if(userCookie === process.env.USER_TOKEN){
     user = true
   }
-  const res = await fetch(`http://${hostname}/api/products`);
-   const products = await res.json()
+
 return{
 
   props: {
     admin,
     user,
-    allProducts: products.data
+ 
   }
 }
 }
