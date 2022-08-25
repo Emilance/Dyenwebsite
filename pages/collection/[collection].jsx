@@ -56,7 +56,7 @@ const Collection = () => {
             </div>
 
             <div className={styles.productContainer}>
-                { productList.map((product, i) => {
+                {(productList.length > 0) ? productList.map((product, i) => {
                     return (
                         <Link  key={i} href={`/product/${product._id}`}>
                          <a>
@@ -67,7 +67,9 @@ const Collection = () => {
                         
                         </Link>
                     )
-                })}
+                }):
+                <p>Loading ...</p>
+                }
             </div>
             </>
             :

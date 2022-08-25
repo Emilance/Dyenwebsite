@@ -10,9 +10,11 @@ const CollectionCarousel = ({productList}) => {
       const carousel = useRef()
       const dispatch = useDispatch()
       let collection = []
-      productList.map(e => {
-          collection.push(e.collec)
-      })
+      if(productList.length > 0){
+          productList.map(e => {
+              collection.push(e.collec)
+          })
+      }
       const uniqueCollection= [...new Set(collection)]
       dispatch(getProducts({...productList, uniqueCollection}))
     const handleArrowClick = (x) => {

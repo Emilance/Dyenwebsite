@@ -10,7 +10,8 @@ import { useRouter } from 'next/router';
 const Product = () => {
    const [order, setOrder] =useState({size: "", quantity: "1"})
    const [product, setProducts] = useState([])
-
+   const [showSizeWarning, setShowSIzeWarning] = useState(true)
+   const  [showATDConfirmation, setShowATDConfirmation] =useState(false)
   
    const dispatch  = useDispatch()
    const { quantity, size } = order
@@ -37,15 +38,25 @@ if (product.prices){
     const [price, setPrice] = useState(priceIndex)
 
    console.log(product)
-// if(product){
-//     var {title, prices, img, desc} = product;
-// }
-    
+
+    const toggleATDConfirmation =  ()=> {
+     var confirm = setTimeout(()=>{
+            setShowATDConfirmation(true)
+        }, 1000)
+
+   
+     
+        
+    }
+
     const handleSizeClick = (x) => {
-            setPrice(product.prices[x])
+            setPrice(product.prices[x]);
+            setShowSIzeWarning(false);
     }
     const  handleAddCartClick = () => {
             dispatch(addProduct({...product, size, price, quantity}))
+            toggleATDConfirmation()
+            
     }
     return ( 
         <div className={styles.container}>
@@ -65,6 +76,10 @@ if (product.prices){
                          <p>{product.desc}</p>
                   
                          <div className={styles.variant}>
+                             {showSizeWarning &&
+                             
+                            <p>select a size !!!</p>
+                             }
                              <div className={styles.size}  value={order.size} onChange={e => setOrder({...order, size : e.target.value})}>
                                 <input type='radio' name='size' value='small' onClick={() => handleSizeClick(0)}  id='small'/>
                                 <label htmlFor='small'>small</label>
@@ -77,6 +92,9 @@ if (product.prices){
                                <label htmlFor='large'>large</label>
                              </div>
                          </div>
+                         {showATDConfirmation  &&
+                         <h3 className={styles.confirmATD}>1 product added to cart</h3>           
+                         }
                          <div className={styles.CTAContainer}>
                              <input
                               type="number"

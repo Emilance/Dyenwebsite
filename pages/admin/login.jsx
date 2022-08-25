@@ -11,7 +11,7 @@ const AdminLogin = () => {
     const router = useRouter();
     const submitForm = (e) =>{
         e.preventDefault()
-    axios.post("http://localhost:3001/api/login", { username, password}).then(
+    axios.post("https://dyen.vercel.app/api/login", { username, password}).then(
        res => {
            router.push("/admin")
            console.log(res)

@@ -20,7 +20,7 @@ const SignInForm = () => {
 
 
             try {          
-           const     res = await axios.post("http://localhost:3000/api/user",  user);
+           const     res = await axios.post("https://dyen.vercel.app/api/user",  user);
                 console.log(res)
                 router.push("/") ;
             } catch (error) {

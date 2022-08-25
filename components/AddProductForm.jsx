@@ -29,7 +29,7 @@ const AddProductForm = ({toggleForm, setFormOpen}) => {
         prices,
         img: url 
        };
-       await axios.post("http://localhost:3000/api/products", product);
+       await axios.post("https://dyen.vercel.app/api/products", product);
        setFormOpen(false);
      } catch (error) {
        console.log(error)

@@ -38,7 +38,7 @@ const Collection = () => {
             </div>
 
             <div className={styles.productContainer}>
-                {allProducts ? allProducts.map((product, i) => {
+                {(allProducts.length > 0 )  ? allProducts.map((product, i) => {
                     return (
                         <Link  key={i} href={`/product/${product._id}`}>
                          <a>

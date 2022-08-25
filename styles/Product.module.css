@@ -16,13 +16,14 @@
 .productsImg{
     position: relative;
     flex:1;
-    width: 100%;
+    width: 90%;
     min-height: 80vh;
   
  
  
   
 }
+
 
 .productDetails{
     flex:1;
@@ -55,7 +56,7 @@
 .productDetails > p {
     margin: 2rem 2rem 2rem 2rem;
     width: 85%;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
 }
 
 .size{
@@ -133,9 +134,47 @@
     background-color: #e782c2a1;
 }
 
+.variant > p{
+     color:red;
+     text-align: center;
+     font-size: 1rem;
+     margin: 0;
+     padding:0;
+}
+.confirmATD{
+   margin: 0;
+   padding: 0.4rem;
+   position: fixed;
+   top:10rem;
+   right: 0;
+   background-color: #E782C2;
+   width: 30vw;
+   color:white;
+   border-radius: 5px;
+   animation-name: blink;
+   animation-duration: 1s;
+}
 
-
-
+@keyframes blink {
+   from {
+        margin-left: 100%;
+        width: 100%;
+        background-color:#aaaaaa;
+        color:black
+    }
+    75% {
+        background-color:white;
+        color:#E782C2 ;
+        margin-left: 25%;
+        width:80%;
+    }
+    to{
+        background-color: #E782C2;
+        color:white;
+        margin-left:0;
+        width: 70%
+    }
+}
 
 
 @media (max-width:700px) {
@@ -162,6 +201,7 @@
     .productDetails > p{
         width: 100%;
         margin-left: auto;
+        font-size: 1rem;
     }
     .size{
         margin: 0;
@@ -171,6 +211,15 @@
     }
     .CTAContainer > button {
         flex: 1.5;
+    }
+    .productsImg{
+        min-height: 20rem;
+        width: 90%;
+        margin: auto;
+    }
+    .confirmATD{
+        width: 70vw;
+        top:5rem;
     }
 }
 

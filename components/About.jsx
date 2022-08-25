@@ -18,7 +18,7 @@ const About = ({allProducts}) => {
                    </p>
             </div>
             <div className={styles.right}>
-            {allProducts.slice(0, 4).map((img, i) => {
+            {(allProducts.length > 0) &&  allProducts.slice(0, 4).map((img, i) => {
                 return(
                 <Link href={`/collection/${img.collec}`} key={i}>
 
